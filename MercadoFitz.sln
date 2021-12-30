@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MercadoFitz", "MercadoFitz.csproj", "{DCCB954A-3E80-4C2B-A067-CDC322E5BD09}"
+	ProjectSection(ProjectDependencies) = postProject
+		{793946C4-0399-472B-BE5E-F40F27FC9C7B} = {793946C4-0399-472B-BE5E-F40F27FC9C7B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestrutura", "..\Infraestrutura\Infraestrutura.csproj", "{793946C4-0399-472B-BE5E-F40F27FC9C7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCCB954A-3E80-4C2B-A067-CDC322E5BD09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCCB954A-3E80-4C2B-A067-CDC322E5BD09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCCB954A-3E80-4C2B-A067-CDC322E5BD09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCCB954A-3E80-4C2B-A067-CDC322E5BD09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{793946C4-0399-472B-BE5E-F40F27FC9C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{793946C4-0399-472B-BE5E-F40F27FC9C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{793946C4-0399-472B-BE5E-F40F27FC9C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{793946C4-0399-472B-BE5E-F40F27FC9C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78C56007-C1C1-4D78-BB71-65CDDE8D345F}
+	EndGlobalSection
+EndGlobal
