@@ -27,6 +27,7 @@ namespace MercadoFitz.Controllers
             CalcularXmlModel model = new CalcularXmlModel();
             return View(model);
         }
+        /*metodo para carregar o xml para pagina*/
         [HttpPost]
         public async Task<IActionResult> CalcularXml(List<IFormFile> arquivos)
         {
