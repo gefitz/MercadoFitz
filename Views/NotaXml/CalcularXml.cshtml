@@ -9,9 +9,14 @@
     <br />
     <button class="btn btn-outline-secondary">Carregar Xml</button>
 </form>
+@if (Model.Nome.Count > 0)
+{
+    <button class="btn btn-primary" onclick="SalvarProdutos(@Model.Nome.Count)">Salvar</button>
+}
 @if (Model.Nome.Count != 0)
 {
-    <table class="table table-hover">
+
+    <table class="table table-hover" id="tabela">
         <thead>
             <tr>
                 <th scope="col">Codigo</th>
@@ -25,14 +30,15 @@
                 <th scope="col">Final</th>
             </tr>
         </thead>
+
         @for (int i = 0; i < Model.Nome.Count; i++)
         {
 
             <tr id="@i">
-                <td><input class="input-group-text" /></td>
-                <td>@Model.Nome[i]</td>
+                <td><input class="input-group-text" id="codigo @i" /></td>
+                <td><p id="nome @i">@Model.Nome[i]</p></td>
                 <td>
-                   <p id="tipoItem @i">@Model.TipoItem[i]</p>
+                    <p id="tipoItem @i">@Model.TipoItem[i]</p>
                 </td>
                 <td><p id="quant @i">@Model.QuantidadeCX[i]</p></td>
                 <td><input class="input-group-text" id="unitario @i" /></td>
@@ -74,4 +80,10 @@
             </tr>
         }
     </table>
+
+}
+@if (Model.Nome.Count > 0)
+{
+
+    <button class="btn btn-primary" onclick="SalvarProdutos(@Model.Nome.Count)">Salvar</button>
 }
