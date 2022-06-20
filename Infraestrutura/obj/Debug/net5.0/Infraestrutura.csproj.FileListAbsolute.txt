@@ -1,0 +1,12 @@
+C:\Users\casa3\source\repos\Infraestrutura\bin\Debug\net5.0\Infraestrutura.deps.json
+C:\Users\casa3\source\repos\Infraestrutura\bin\Debug\net5.0\Infraestrutura.dll
+C:\Users\casa3\source\repos\Infraestrutura\bin\Debug\net5.0\ref\Infraestrutura.dll
+C:\Users\casa3\source\repos\Infraestrutura\bin\Debug\net5.0\Infraestrutura.pdb
+C:\Users\casa3\source\repos\Infraestrutura\obj\Debug\net5.0\Infraestrutura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\casa3\source\repos\Infraestrutura\obj\Debug\net5.0\Infraestrutura.AssemblyInfoInputs.cache
+C:\Users\casa3\source\repos\Infraestrutura\obj\Debug\net5.0\Infraestrutura.AssemblyInfo.cs
+C:\Users\casa3\source\repos\Infraestrutura\obj\Debug\net5.0\Infraestrutura.csproj.CoreCompileInputs.cache
+C:\Users\casa3\source\repos\Infraestrutura\obj\Debug\net5.0\Infraestrutura.dll
+C:\Users\casa3\source\repos\Infraestrutura\obj\Debug\net5.0\ref\Infraestrutura.dll
+C:\Users\casa3\source\repos\Infraestrutura\obj\Debug\net5.0\Infraestrutura.pdb
+C:\Users\casa3\source\repos\Infraestrutura\obj\Debug\net5.0\Infraestrutura.csproj.AssemblyReference.cache
