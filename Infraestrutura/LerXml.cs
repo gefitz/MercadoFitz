@@ -24,6 +24,8 @@ namespace Infraestrutura
             unitarioList = xmlDocument.GetElementsByTagName("vUnCom");
             valortotalList = xmlDocument.GetElementsByTagName("vProd");
             tipoItemList = xmlDocument.GetElementsByTagName("uCom");
+
+            
         }
     }
 }

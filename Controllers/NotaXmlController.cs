@@ -1,4 +1,5 @@
 ﻿using Infraestrutura;
+using Infraestrutura.Model;
 using MercadoFitz.Models;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Xml;
 
 namespace MercadoFitz.Controllers
 {
@@ -24,7 +26,7 @@ namespace MercadoFitz.Controllers
         }
         public IActionResult CalcularXml()
         {
-            CalcularXmlModel model = new CalcularXmlModel();
+            XmlModel model = new XmlModel();
             return View(model);
         }
         /*metodo para carregar o xml para pagina*/
@@ -32,7 +34,7 @@ namespace MercadoFitz.Controllers
         public async Task<IActionResult> CalcularXml(List<IFormFile> arquivos)
         {
             LerXml ler = new LerXml();
-            CalcularXmlModel model = new CalcularXmlModel(); 
+            XmlModel model = new XmlModel();
             // caminho completo do arquivo na localização temporária
             var caminhoArquivo = Path.GetTempFileName();
 
@@ -56,15 +58,38 @@ namespace MercadoFitz.Controllers
                 for (int i = 0; i < ler.nomeProdList.Count; i++)
                 {
                     model.Nome.Add(ler.nomeProdList[i].InnerText);
-                    model.QuantidadeCX.Add(ler.quantidadeList[i].InnerText);
-                    model.ValorTotal.Add(ler.valortotalList[i].InnerText);
-                    model.ValorUnitatiro.Add(ler.unitarioList[i].InnerText);
+                    model.QuantidadeCX.Add(XmlConvert.ToDouble(ler.quantidadeList[i].InnerText));
+                    model.ValorTotalCx.Add(XmlConvert.ToDouble(ler.valortotalList[i].InnerText));
+                    model.ValorUnitatiro.Add(XmlConvert.ToDouble(ler.unitarioList[i].InnerText));
                     model.TipoItem.Add(ler.tipoItemList[i].InnerText);
                 }
             }
             //retorna a viewdata
             return View(model);
 
+        }
+        public void SalvarProduto(ProductModel model)
+        {
+            SalvarProduto salvar = new SalvarProduto();
+            ProdutoModel produto = ConvertModel(model);
+            salvar.AddProdutos(produto);
+        }
+        public ProdutoModel ConvertModel(ProductModel model)
+        {
+          ProdutoModel produto = new ProdutoModel
+            {
+                Codigo = model.Codigo,
+                Nome = model.Nome,
+                ValorUnitatiro = model.ValorUnitario,
+                ValorTotalCx = model.ValorTotalCx,
+                QuantidadeUN = model.QuantidadeUN,
+                QuantidadeKG = model.QuantidadeKG,
+                QuantidadeCX = model.QuantidadeCX,
+                Porcetagem = model.Porcetagem,
+                PrecoFinal = model.PrecoFinal,
+
+            };
+            return produto;
         }
     }
 }

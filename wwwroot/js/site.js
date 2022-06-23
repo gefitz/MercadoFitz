@@ -29,43 +29,43 @@ function CalcXml(porcetagem, identificao) {
         result = valorUnitario + n1;
 
     }
-
+    console.log(result);
     document.getElementById('final ' + identificao).innerHTML = result;
 }
 
 /**  */
-function SalvarProdutos(count) {
-    var jsonProdutos = {};
-    for (var i = 0; i < count; i++) {
-        codigo = document.getElementById('codigo ' + i).innerText
-        nome = document.getElementById('nome ' + i).innerText
-        porcetagem = document.getElementById('inputGroupSelect ' + i).value
-        quantidadeCX = parseInt(document.getElementById('quant ' + i).innerText);
-        quantidadeUnitaria = document.getElementById('unitario ' + i).value;
-        quantidadeUnitaria = parseFloat(quantidadeUnitaria.replace(",", "."))
-        valorUnitario = parseFloat(document.getElementById('valorUnitario ' + i).innerText);
-        valorTotal = parseFloat(document.getElementById('valorTotal ' + i).innerText);
-        tipoItem = document.getElementById('tipoItem ' + i).innerText;
-    }
-}
 
-function tableSelecionada() {
+
+function SalvarProdutos() {
     /*fazer um json e enviar um por cada dentro do for para controller,controller devera retornar succes*/ 
     var tabela = document.getElementById("tabela");
     var linha = tabela.getElementsByTagName("tr");
     for (i = 1; i < linha.length; i++) {
-        var coluna = linha[i].getElementsByTagName("td");
-        var codigo = document.getElementById('codigo ' + (i - 1)).value
-        var nome = coluna[1].innerText
-        var tipo = coluna[2].innerText
-        var quantidadeCaixas = coluna[3].innerText
-        var quantidadeUnitario = document.getElementById('unitario ' + (i - 1)).value
-        var valorUnitario = coluna[5].innerText
-        var valorTotalCx = coluna[6].innerText
-        var porcetagem = document.getElementById('inputGroupSelect ' + (i - 1))
-        var texto = porcetagem.options[porcetagem.selectedIndex].text
-        var valorFinal = coluna[8].innerText
-        var json = "{"
+        var codigo = document.getElementById('codigo '+ i).value
+        var nome = document.getElementById('nome ' + i).innerText
+        var quantidadeCaixas = document.getElementById('quant ' + i).innerText
+        var quantidadeUnitario = document.getElementById('unitario ' + i).value
+        var valorUnitario = document.getElementById('valorUnitario ' + i).innerText
+        var valorTotalCx = document.getElementById('valorTotal ' + i).innerText
+        var porcetagem = document.getElementById('inputGroupSelect ' + i)
+            porcetagem = porcetagem.options[porcetagem.selectedIndex].text
+        var valorFinal = document.getElementById('final ' + i).innerText
+        var json = {
+            "Codigo": codigo,
+            "Nome": nome,
+            "QuantidadeCX": quantidadeCaixas,
+            "QuantidadeUN": quantidadeUnitario,
+            "ValorUnitario":  valorUnitario,
+            "ValorTotalCx": valorTotalCx,
+            "PrecoFinal": valorFinal,
+            "Porcetagem": porcetagem,
+        }
+        console.log(json)
+        $.ajax({
+            url: "SalvarProduto",
+            method: "POST",
+            data: json
+        })
         
     }
 }
