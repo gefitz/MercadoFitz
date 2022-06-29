@@ -1,4 +1,4 @@
-﻿@model MercadoFitz.Models.CalcularXmlModel
+﻿@model MercadoFitz.Models.XmlModel
 @{
     ViewData["Title"] = "Calcular Nota";
 
@@ -43,7 +43,7 @@
                 <td><p id="quant @i">@Model.QuantidadeCX[i]</p></td>
                 <td><input class="input-group-text" id="unitario @i" /></td>
                 <td><p id="valorUnitario @i">@Model.ValorUnitatiro[i]</p></td>
-                <td><p id="valorTotal @i">@Model.ValorTotal[i]</p></td>
+                <td><p id="valorTotal @i">@Model.ValorTotalCx[i]</p></td>
 
                 <td>
                     <select class="custom-select" id="inputGroupSelect @i" onchange="CalcXml(this.value, @i)">
